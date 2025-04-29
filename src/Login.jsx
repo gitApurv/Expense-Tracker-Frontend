@@ -3,9 +3,6 @@ import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
-import ErrorIcon from "@mui/icons-material/Error";
-
-import "./Login.css";
 
 export default function Login({ setIsLoggedIn }) {
   const [user, setUser] = useState({ username: "", password: "" });
@@ -30,36 +27,48 @@ export default function Login({ setIsLoggedIn }) {
       setError(jsonResponse.message);
     }
   }
+
+  function handleSignUp() {
+    window.location.href = "/signup";
+  }
+
   return (
     <div>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        {error && (
-          <Alert variant="outlined" severity="error" icon={false}>
-            {error}
-          </Alert>
-        )}
-        <TextField
-          id="outlined-basic"
-          label="Username"
-          variant="outlined"
-          name="username"
-          value={user.username}
-          onChange={handleChange}
-        />
-        <TextField
-          id="outlined-basic"
-          label="Password"
-          variant="outlined"
-          type="password"
-          name="password"
-          value={user.password}
-          onChange={handleChange}
-        />
-        <Button variant="contained" type="submit">
-          Login
+      <div>
+        <form onSubmit={handleSubmit}>
+          {error && (
+            <Alert variant="outlined" severity="error" icon={false}>
+              {error}
+            </Alert>
+          )}
+          <TextField
+            id="outlined-basic"
+            label="Username"
+            variant="outlined"
+            name="username"
+            value={user.username}
+            onChange={handleChange}
+          />
+          <TextField
+            id="outlined-basic"
+            label="Password"
+            variant="outlined"
+            type="password"
+            name="password"
+            value={user.password}
+            onChange={handleChange}
+          />
+          <Button variant="contained" type="submit">
+            Login
+          </Button>
+        </form>
+      </div>
+      <div>
+        <Button variant="outlined" onClick={handleSignUp}>
+          Sign Up
         </Button>
-      </form>
+      </div>
     </div>
   );
 }

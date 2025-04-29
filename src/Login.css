@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Login container card */
+.login-container {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Header */
+.login-header {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 25px;
+}
+
+/* Error Alert */
+.error-alert {
+  margin-bottom: 20px;
+  font-size: 14px;
+  padding: 10px;
+}
+
+/* Form Styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Fields */
+.login-input .MuiInputBase-root {
+  width: 100%;
+}
+
+/* Login Button */
+.login-button {
+  background-color: #1976d2;
+  color: #ffffff;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #115293;
+}
+
+/* Signup Button Container */
+.signup-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Signup Button */
+.signup-button {
+  width: 100%;
+  font-weight: 500;
+  border-color: #1976d2;
+  color: #1976d2;
+  transition: all 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #e3f2fd;
+  border-color: #115293;
+  color: #115293;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 20px;
+  }
+
+  .login-header {
+    font-size: 24px;
+  }
+}
